@@ -1,3 +1,4 @@
+
 @extends('layouts.app')
 @section('title','Trainers')
 @section ('content')
@@ -21,3 +22,4 @@
 @endforeach
 </div>
 @endsection
+

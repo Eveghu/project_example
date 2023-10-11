@@ -1,6 +1,8 @@
 <?php
 use App\Http\Controllers\TrainerController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ImageController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -24,3 +26,8 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::resource('/trainers', TrainerController::class);
+
+ Route::controller(ImageController::class)->group(function(){
+     Route::get('image-upload', 'index');
+     Route::post('image-upload', 'imageUpload')->name('image.store');
+ });
