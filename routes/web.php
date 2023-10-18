@@ -27,6 +27,8 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Route::resource('/trainers', TrainerController::class);
 
+Route::get('delete/{id}',[TrainerController::class, 'destroy']);
+
  Route::controller(ImageController::class)->group(function(){
      Route::get('image-upload', 'index');
      Route::post('image-upload', 'imageUpload')->name('image.store');
